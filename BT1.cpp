@@ -1,16 +1,9 @@
 #include <iostream>
-#include <cmath> // Thu vien ho tro ham abs() va round()
+#include <cmath>
 using namespace std;
-
-/*
- Ham tim uoc so chung lon nhat (GCD) cua hai so nguyen a va b
-
- Dau vao:
-	- a, b: Hai so nguyen can tim GCD.
- Dau ra:
-	- Tra ve uoc so chung lon nhat cua |a| va |b| bang thuat toan Euclid.
- */
-
+// Ham tim uoc so chung lon nhat GCD cua hai so nguyen a va b
+// Dau vao hai so nguyen a va b
+// Dau ra uoc so chung lon nhat cua a va b
 long long gcd(long long a, long long b)
 {
 	a = abs(a);
@@ -18,23 +11,15 @@ long long gcd(long long a, long long b)
 	while (b != 0)
 	{
 		long long temp = b;
-		b = a % b;
+		b = a%b;
 		a = temp;
 	}
 
 	return a;
 }
-
-/*
- Ham chuyen doi mot so thuc thanh phan so toi gian va in ket qua ra man hinh.
- 
- Dau vao:
-	- tu: Tu so duoi dang so thuc.
-    - mau: Mau so duoi dang so thuc (phai khac 0).
- Dau ra:
-    - In ra man hinh phan so toi gian cua 2 so thuc duoc truyen vao.
- */
-
+// Ham chuyen doi mot phan so thuc thanh phan so toi gian
+// Dau vao tu so tu va mau so mau duoi dang so thuc
+// Dau ra xuat ra phan so toi gian duoi dang tu mau
 void Fraction(double tu, double mau)
 {
 	const long long TANG = 1e6;
